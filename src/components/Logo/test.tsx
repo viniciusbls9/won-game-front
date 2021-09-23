@@ -1,15 +1,34 @@
-import { render, screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
+import { screen } from '@testing-library/react'
 
 import Logo from '.'
 
-describe('
-<Logo />', () => {
-it('should render the heading', () => {
-const { container } = render(
-<Logo />)
+describe('<Logo />', () => {
+  it('should render a white label by default', () => {
+    renderWithTheme(<Logo />)
+    expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
+      color: '#FAFAFA'
+    })
+  })
 
-expect(screen.getByRole('heading', { name: /Logo/i })).toBeInTheDocument()
+  it('should render a black label when color is passed', () => {
+    renderWithTheme(<Logo color="black" />)
+    expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
+      color: '#030517'
+    })
+  })
 
-expect(container.firstChild).toMatchSnapshot()
-})
+  it('should render a bigger logo', () => {
+    renderWithTheme(<Logo size="large" />)
+    expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
+      width: '20rem'
+    })
+  })
+
+  it('should render a normal logo when size is default', () => {
+    renderWithTheme(<Logo />)
+    expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
+      width: '11rem'
+    })
+  })
 })
