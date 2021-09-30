@@ -21,6 +21,13 @@ describe('<Button />', () => {
     })
   })
 
+  it('should render full width version', () => {
+    renderWithTheme(<Button fullWidth>Buy now</Button>)
+    expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
+      width: '100%'
+    })
+  })
+
   it('should render the large size by default', () => {
     renderWithTheme(<Button size="large">Buy now</Button>)
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
