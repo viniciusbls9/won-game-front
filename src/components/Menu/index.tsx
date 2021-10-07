@@ -5,7 +5,8 @@ import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outline
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 import Logo from 'components/Logo'
-import Button from '../Button'
+import Button from 'components/Button'
+import MediaMatch from 'components/MediaMatch'
 
 import * as S from './styles'
 
@@ -18,14 +19,26 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <S.Wrapper>
-      <S.IconWrapper onClick={() => setIsOpen(true)}>
-        <MenuIcon aria-label="Open Menu" />
-      </S.IconWrapper>
+      {/**  bloco menu icon */}
+      <MediaMatch lessThan="medium">
+        <S.IconWrapper onClick={() => setIsOpen(true)}>
+          <MenuIcon aria-label="Open Menu" />
+        </S.IconWrapper>
+      </MediaMatch>
 
+      {/**  bloco logo */}
       <S.LogoWrapper>
         <Logo hideOnMobile />
       </S.LogoWrapper>
 
+      <MediaMatch greaterThan="medium">
+        <S.MenuNav>
+          <S.MenuLink href="#">Home</S.MenuLink>
+          <S.MenuLink href="#">Explorer</S.MenuLink>
+        </S.MenuNav>
+      </MediaMatch>
+
+      {/**  bloco search icon */}
       <S.MenuGroup>
         <S.IconWrapper>
           <SearchIcon aria-label="Search" />
@@ -34,6 +47,13 @@ const Menu = ({ username }: MenuProps) => {
         <S.IconWrapper>
           <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWrapper>
+
+        {/**  bloco button sign in */}
+        {!username && (
+          <MediaMatch greaterThan="medium">
+            <Button>Sign In</Button>
+          </MediaMatch>
+        )}
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
