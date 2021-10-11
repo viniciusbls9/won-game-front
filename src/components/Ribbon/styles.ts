@@ -9,7 +9,10 @@ const wrapperModifiers = {
     font-size: ${theme.font.sizes.small};
     height: 3.6rem;
   `,
-  small: (theme: DefaultTheme) => css``
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    height: 2.6rem;
+  `
 }
 
 export const Wrapper = styled.div<Omit<RibbonProps, 'children'>>`
