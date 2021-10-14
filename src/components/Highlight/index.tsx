@@ -1,8 +1,25 @@
+import Button from '../Button'
 import * as S from './styles'
 
-const Highlight = () => (
+export type HighlightProps = {
+  title: string
+  subTitle: string
+  buttonLabel: string
+  buttonLink: string
+}
+
+const Highlight = ({
+  title,
+  subTitle,
+  buttonLabel,
+  buttonLink
+}: HighlightProps) => (
   <S.Wrapper>
-    <h1>Highlight</h1>
+    <S.Title>{title}</S.Title>
+    <S.SubTitle>{subTitle}</S.SubTitle>
+    <Button as="a" href={buttonLink}>
+      {buttonLabel}
+    </Button>
   </S.Wrapper>
 )
 
