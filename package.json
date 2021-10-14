@@ -12,7 +12,8 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "build-storybook": "build-storybook -s ./public",
-    "cross-env": "cross-env NODE_ENV=production yarn build"
+    "cross-env": "cross-env NODE_ENV=production yarn build",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*": [
