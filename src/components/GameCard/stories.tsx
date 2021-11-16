@@ -10,6 +10,14 @@ export default {
     img: 'https://i.picsum.photos/id/1010/1600/400.jpg?hmac=aHo3G1_n46RGzMM7jzyqMKUbSCfPPkHlm52FEvbShaw',
     price: 'R$ 235,00',
     promotionalPrice: 'R$ 200,00'
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 
