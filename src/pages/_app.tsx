@@ -10,7 +10,7 @@ function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Head>
-        <title>React Avançado - Boilerplate</title>
+        <title>Won Games</title>
         <link
           rel="shortcut icon"
           href="/img/icon-512.png"
@@ -22,10 +22,7 @@ function App({ Component, pageProps }: AppProps) {
           type="image/x-icon"
         />
         <link rel="manifest" href="/manifest.json" />
-        <meta
-          name="description"
-          content="A simple proct starter to work with Typescript, React, NextJS and Styled Components"
-        />
+        <meta name="description" content="The best Game Stores in the word " />
       </Head>
       <Component {...pageProps} />
     </ThemeProvider>
