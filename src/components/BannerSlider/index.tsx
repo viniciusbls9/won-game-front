@@ -1,5 +1,5 @@
 import Banner, { BannerProps } from '../Banner'
-import Slider from 'components/Slider'
+import { Slider } from 'components'
 import * as S from './styles'
 import { Settings } from 'react-slick'
 

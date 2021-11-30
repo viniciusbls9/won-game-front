@@ -1,7 +1,17 @@
+import { BannerProps } from 'components/Banner'
+import { GameCardProps } from 'components/GameCard'
+
 import Footer from 'components/Footer'
 import { Container } from 'components/Container'
 import Menu from 'components/Menu'
 import Heading from 'components/Heading'
+import { HighlightProps } from 'components/Highlight'
+
+export type HomeTemplateProps = {
+  banners: BannerProps[]
+  newGamesSlider: GameCardProps[]
+  mostPopularHighlight: HighlightProps
+}
 
 const Home = () => (
   <section>

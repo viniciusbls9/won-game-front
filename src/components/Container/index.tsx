@@ -9,3 +9,4 @@ export const Container = styled.div`
     padding-right: calc(${theme.grid.gutter} / 2);
   `}
 `
+export default Container
