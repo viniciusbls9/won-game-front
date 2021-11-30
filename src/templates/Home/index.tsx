@@ -1,43 +1,78 @@
 import { BannerProps } from 'components/Banner'
 import { GameCardProps } from 'components/GameCard'
-
-import { Container, Footer, Menu, Heading } from 'components'
 import { HighlightProps } from 'components/Highlight'
+
+import {
+  Container,
+  Footer,
+  Menu,
+  Heading,
+  BannerSlider,
+  GameCardSlider,
+  Highlight
+} from 'components'
 
 export type HomeTemplateProps = {
   banners: BannerProps[]
-  newGamesSlider: GameCardProps[]
+  newGames: GameCardProps[]
   mostPopularHighlight: HighlightProps
+  mostPopularGames: GameCardProps[]
+  upcommingGames: GameCardProps[]
+  upcommingHighligth: HighlightProps
+  upcommingMoreGames: GameCardProps[]
+  freeGames: GameCardProps[]
+  freeHighligth: HighlightProps
 }
 
-const Home = () => (
+const Home = ({
+  banners,
+  newGames,
+  mostPopularHighlight,
+  mostPopularGames,
+  upcommingGames,
+  upcommingHighligth,
+  upcommingMoreGames,
+  freeGames,
+  freeHighligth
+}: HomeTemplateProps) => (
   <section>
     <Container>
       <Menu />
+      <BannerSlider items={banners} />
     </Container>
 
     <Container>
       <Heading lineLeft lineColor="secondary" color="black">
         News
       </Heading>
+      <GameCardSlider items={newGames} color="black" />
     </Container>
 
     <Container>
       <Heading lineLeft lineColor="secondary">
         Most Popular
       </Heading>
+      <Highlight {...mostPopularHighlight} />
+      <GameCardSlider items={mostPopularGames} />
     </Container>
 
     <Container>
       <Heading lineLeft lineColor="secondary">
         Upcomming
       </Heading>
+
+      <GameCardSlider items={upcommingGames} />
+      <Highlight {...upcommingHighligth} />
+      <GameCardSlider items={upcommingMoreGames} />
     </Container>
 
     <Container>
       <Heading lineLeft lineColor="secondary">
         Free Games
       </Heading>
+
+      <Highlight {...freeHighligth} />
+      <GameCardSlider items={freeGames} />
     </Container>
 
     <Container>

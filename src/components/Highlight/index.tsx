@@ -3,7 +3,7 @@ import * as S from './styles'
 
 export type HighlightProps = {
   title: string
-  subTitle: string
+  subtitle: string
   buttonLabel: string
   buttonLink: string
   backgroundImage: string
@@ -13,7 +13,7 @@ export type HighlightProps = {
 
 const Highlight = ({
   title,
-  subTitle,
+  subtitle,
   buttonLabel,
   buttonLink,
   backgroundImage,
@@ -24,7 +24,7 @@ const Highlight = ({
     {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
     <S.Content>
       <S.Title>{title}</S.Title>
-      <S.SubTitle>{subTitle}</S.SubTitle>
+      <S.SubTitle>{subtitle}</S.SubTitle>
       <Button as="a" href={buttonLink}>
         {buttonLabel}
       </Button>
