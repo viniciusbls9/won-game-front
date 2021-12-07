@@ -79,8 +79,6 @@ const Home = ({
         <Highlight {...freeHighligth} />
         <GameCardSlider items={freeGames} />
       </S.SectionFreeGames>
-      <Highlight {...freeHighligth} />
-      <GameCardSlider items={freeGames} />
     </Container>
 
     <S.SectionFooter>
