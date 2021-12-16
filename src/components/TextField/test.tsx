@@ -11,4 +11,10 @@ describe('<TextField />', () => {
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
+
+  it('Renders without Label', () => {
+    renderWithTheme(<TextField />)
+
+    expect(screen.queryByLabelText('Label')).not.toBeInTheDocument()
+  })
 })
