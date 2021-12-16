@@ -1,4 +1,4 @@
-import { useState, InputHTMLAttributes } from 'react'
+import { useState, InputHTMLAttributes, ReactNode } from 'react'
 
 import * as S from './styles'
 
@@ -7,12 +7,14 @@ export type TextFieldProps = {
   label?: string
   labelFor?: string
   initialValue?: string
+  icon?: ReactNode
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextField = ({
   label,
   labelFor = '',
   initialValue = '',
+  icon,
   onInput,
   ...props
 }: TextFieldProps) => {
@@ -29,6 +31,7 @@ const TextField = ({
     <S.Wrapper>
       {!!label && <S.Label htmlFor={labelFor}>{label}</S.Label>}
       <S.InputWrapper>
+        {!!icon && <S.Icon>{icon}</S.Icon>}
         <S.Input type="text" onChange={onChange} value={value} {...props} />
       </S.InputWrapper>
     </S.Wrapper>
