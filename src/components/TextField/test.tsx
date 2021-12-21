@@ -43,6 +43,18 @@ describe('<TextField />', () => {
     })
   })
 
+  it('Renders with other color when message error is true', () => {
+    renderWithTheme(
+      <TextField
+        icon={<Email data-testid="icon" />}
+        iconPosition="right"
+        error="Ops... something is wrong"
+      />
+    )
+
+    expect(screen.getByText('Ops... something is wrong')).toBeInTheDocument()
+  })
+
   it('Does not changes its value when disabled', async () => {
     const onInput = jest.fn()
     renderWithTheme(
