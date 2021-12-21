@@ -46,8 +46,8 @@ const TextField = ({
           disabled={disabled}
           {...props}
         />
-        {!!error && <S.Error>{error}</S.Error>}
       </S.InputWrapper>
+      {!!error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
   )
 }

@@ -93,4 +93,9 @@ export const Wrapper = styled.div<WrapperProps>`
   `}
 `
 
-export const Error = styled.p``
+export const Error = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.red};
+    font-size: ${theme.font.sizes.xsmall};
+  `}
+`
