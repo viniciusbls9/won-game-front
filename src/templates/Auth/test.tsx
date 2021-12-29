@@ -1,13 +1,42 @@
-import { render, screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
+import '../../../.jest/match-media-mock'
+import { screen } from '@testing-library/react'
 
 import Auth from '.'
 
 describe('<Auth />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<Auth />)
+  it('should render all components and chilndren', () => {
+    renderWithTheme(
+      <Auth title="Sign In">
+        <input type="text" name="" id="" />
+      </Auth>
+    )
 
-    expect(screen.getByRole('heading', { name: /Auth/i })).toBeInTheDocument()
+    // verifica se tem duas logos
+    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)
 
-    expect(container.firstChild).toMatchSnapshot()
+    // verifica se tem o heading principal do banner
+    expect(
+      screen.getByRole('heading', {
+        name: /All yours favorite games in one place/i
+      })
+    ).toBeInTheDocument()
+
+    // verifica se tem o subtitle
+    expect(
+      screen.getByRole('heading', {
+        name: /WON is the best and most complete gaming plataform./i
+      })
+    ).toBeInTheDocument()
+
+    // verifica se tem o title do content
+    expect(
+      screen.getByRole('heading', {
+        name: /Sign In/i
+      })
+    ).toBeInTheDocument()
+
+    // verifica se o children ta sendo renderizado
+    expect(screen.getByRole('textbox')).toBeInTheDocument()
   })
 })
