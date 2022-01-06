@@ -26,4 +26,13 @@ describe('<FormSignIn />', () => {
     // verifique forgot password link
     expect(screen.getByText('Forgot your password?').closest('a'))
   })
+
+  it('should render the text and link to sign up', () => {
+    renderWithTheme(<FormSignIn />)
+
+    // verifique text
+    expect(screen.getByRole('link', { name: /sign up/i })).toBeInTheDocument()
+    // verifique link
+    expect(screen.getByText(/don't have an account\?/i)).toBeInTheDocument()
+  })
 })
