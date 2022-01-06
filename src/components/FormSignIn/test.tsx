@@ -19,4 +19,11 @@ describe('<FormSignIn />', () => {
       screen.getByRole('button', { name: /Sign in now/i })
     ).toBeInTheDocument()
   })
+
+  it('should render the forgot password link', () => {
+    renderWithTheme(<FormSignIn />)
+
+    // verifique forgot password link
+    expect(screen.getByText('Forgot your password?').closest('a'))
+  })
 })
