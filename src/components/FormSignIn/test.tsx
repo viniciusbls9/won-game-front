@@ -1,15 +1,22 @@
-import { render, screen } from '@testing-library/react'
+import '../../../.jest/match-media-mock'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import FormSignIn from '.'
 
 describe('<FormSignIn />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<FormSignIn />)
+  it('should render the form', () => {
+    renderWithTheme(<FormSignIn />)
 
+    // verifique email field
+    expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument()
+
+    // verifique password field
+    expect(screen.getByPlaceholderText(/password/i)).toBeInTheDocument()
+
+    // verifique button
     expect(
-      screen.getByRole('heading', { name: /FormSignIn/i })
+      screen.getByRole('button', { name: /Sign in now/i })
     ).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 })
