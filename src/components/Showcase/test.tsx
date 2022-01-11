@@ -17,12 +17,29 @@ describe('<Showcase />', () => {
   it('should render the Showcase with title, highlight and games', () => {
     renderWithTheme(<Showcase {...props} />)
 
-    expect(screen.getByText('Most Popular')).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Read Dead is back!/i })
+      screen.getByRole('heading', { name: /Most Popular/i })
     ).toBeInTheDocument()
+
     expect(
-      screen.getByRole('heading', { name: /Population Zero/i })
+      screen.getByRole('heading', { name: highlightMock.title })
     ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', { name: gamesMock[0].title })
+    ).toBeInTheDocument()
+  })
+
+  it('should render the Showcase without title', () => {
+    renderWithTheme(
+      <Showcase highlight={props.highlight} games={props.games} />
+    )
+
+    screen.getByRole('heading', { name: highlightMock.title })
+    screen.getByRole('heading', { name: gamesMock[0].title })
+
+    expect(
+      screen.queryByRole('heading', { name: /Most Popular/i })
+    ).not.toBeInTheDocument()
   })
 })
