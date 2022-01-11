@@ -6,7 +6,7 @@ import bannerMock from 'components/BannerSlider/mock'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mocks'
 
-import Home from '.'
+import { Home } from 'templates'
 
 const props = {
   banners: bannerMock,

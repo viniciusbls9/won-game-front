@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import Base from '.'
+import { Base } from 'templates'
 
 jest.mock('components/Menu', () => {
   return {
