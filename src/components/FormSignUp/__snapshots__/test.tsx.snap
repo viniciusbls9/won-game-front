@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormSignUp /> should render the form 1`] = `
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 .c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -36,6 +30,12 @@ exports[`<FormSignUp /> should render the form 1`] = `
 
 .c7:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
 .c2 {
