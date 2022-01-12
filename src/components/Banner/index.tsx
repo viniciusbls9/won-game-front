@@ -1,5 +1,5 @@
 import { Button } from 'components'
-import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon'
+import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import * as S from './styles'
 
 export type BannerProps = {

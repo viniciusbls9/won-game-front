@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 
-import Banner from '.'
+import { Banner } from 'components'
 
 const props = {
   img: 'https://source.unsplash.com/user/willianjusten/1042x580',

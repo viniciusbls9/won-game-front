@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Radio, { RadioProps } from '.'
+import Radio, { RadioProps } from 'components/Radio'
 
 export default {
   title: 'Form/Radio',

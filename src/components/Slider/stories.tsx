@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Story, Meta } from '@storybook/react/types-6-0'
 import { Settings } from 'react-slick'
 
-import Slider from '.'
+import { Slider } from 'components'
 
 export default {
   title: 'Slider',

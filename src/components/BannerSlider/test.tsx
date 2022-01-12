@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import BannerSlider from '.'
+import { BannerSlider } from 'components'
 
 const items = [
   {

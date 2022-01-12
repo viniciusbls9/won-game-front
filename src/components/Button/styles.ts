@@ -1,5 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import { ButtonProps } from '.'
+import { ButtonProps } from 'components/Button'
 
 export type WrapperProps = { hasIcon: boolean } & Pick<
   ButtonProps,

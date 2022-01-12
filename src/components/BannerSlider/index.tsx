@@ -1,4 +1,4 @@
-import Banner, { BannerProps } from '../Banner'
+import Banner, { BannerProps } from 'components/Banner'
 import { Slider } from 'components'
 import * as S from './styles'
 import { Settings } from 'react-slick'

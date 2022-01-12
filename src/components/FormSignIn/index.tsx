@@ -2,8 +2,7 @@
 import { Email, Lock } from 'styled-icons/material-outlined'
 import Link from 'next/link'
 
-import { Button } from 'components'
-import TextField from 'components/TextField'
+import { Button, TextField } from 'components'
 import { FormWrapper, FormLink } from 'components/Form'
 import * as S from './styles'
 

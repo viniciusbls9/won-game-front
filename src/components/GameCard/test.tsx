@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen, fireEvent } from '@testing-library/react'
 
-import GameCard from '.'
+import { GameCard } from 'components'
 import theme from 'styles/theme'
 
 const props = {

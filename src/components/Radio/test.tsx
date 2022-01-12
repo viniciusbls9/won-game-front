@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { renderWithTheme } from 'utils/tests/helpers'
 import theme from 'styles/theme'
 
-import Radio from '.'
+import Radio from 'components/Radio'
 
 describe('<Radio />', () => {
   it('should render with label (white)', () => {

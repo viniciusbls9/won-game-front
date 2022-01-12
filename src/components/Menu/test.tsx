@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen, fireEvent } from '@testing-library/react'
 
-import Menu from '.'
+import { Menu } from 'components'
 
 describe('<Menu />', () => {
   it('should render the Menu', () => {

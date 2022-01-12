@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import FormSignIn from '.'
+import { FormSignIn } from 'components'
 
 describe('<FormSignIn />', () => {
   it('should render the form', () => {

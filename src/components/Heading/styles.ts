@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
-import { HeadingProps, LineColorsProps } from '.'
+import { HeadingProps, LineColorsProps } from 'components/Heading'
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`

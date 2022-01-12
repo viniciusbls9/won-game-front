@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 
-import Footer from '.'
+import { Footer } from 'components'
 
 describe('<Footer />', () => {
   it('should render 4 column topics', () => {

@@ -1,6 +1,7 @@
+import '../../../.jest/match-media-mock'
 import { render, screen } from '@testing-library/react'
 
-import MediaMatch from '.'
+import { MediaMatch } from 'components'
 
 describe('<MediaMatch />', () => {
   let desktopHeading: Element

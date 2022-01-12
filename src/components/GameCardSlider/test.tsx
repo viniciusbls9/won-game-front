@@ -2,7 +2,7 @@ import '../../../.jest/match-media-mock'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import GameCardSlider from '.'
+import { GameCardSlider } from 'components'
 
 const items = [
   {

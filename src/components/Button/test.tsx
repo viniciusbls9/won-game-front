@@ -1,8 +1,9 @@
+import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
 
-import Button from '.'
+import { Button } from 'components'
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {

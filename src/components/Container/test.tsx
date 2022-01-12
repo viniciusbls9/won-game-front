@@ -1,7 +1,8 @@
+import '../../../.jest/match-media-mock'
 import theme from 'styles/theme'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import { Container } from '.'
+import { Container } from 'components'
 
 describe('<Container />', () => {
   it('should render the heading', () => {

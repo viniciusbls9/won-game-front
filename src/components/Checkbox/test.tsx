@@ -1,8 +1,9 @@
+import '../../../.jest/match-media-mock'
 import { screen, waitFor } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 import userEvent from '@testing-library/user-event'
 
-import Checkbox from '.'
+import { Checkbox } from 'components'
 
 describe('<Checkbox />', () => {
   it('should render with label', () => {

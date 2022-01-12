@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import FormSignUp from '.'
+import { FormSignUp } from 'components'
 
 export default {
   title: 'Form/FormSignUp',

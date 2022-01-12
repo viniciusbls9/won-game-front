@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Ribbon, { RibbonProps } from '.'
+import Ribbon, { RibbonProps } from 'components/Ribbon'
 
 export default {
   title: 'Ribbon',

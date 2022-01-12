@@ -1,7 +1,8 @@
+import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 
-import Logo from '.'
+import { Logo } from 'components'
 
 describe('<Logo />', () => {
   it('should render a white label by default', () => {
