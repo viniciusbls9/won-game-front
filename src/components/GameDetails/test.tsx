@@ -35,4 +35,13 @@ describe('<GameDetails />', () => {
 
     expect(screen.getByRole('heading', { name: /genres/i })).toBeInTheDocument()
   })
+
+  it('should render plataform icons', () => {
+    renderWithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByRole('img', { name: /Linux/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /Windows/i })).toBeInTheDocument()
+
+    expect(screen.getByRole('img', { name: /Mac/i })).toBeInTheDocument()
+  })
 })
