@@ -2,9 +2,9 @@ import '../../../.jest/match-media-mock'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 
-import bannerMock from 'components/BannerSlider/mock'
-import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mocks'
+import bannerMock from 'mocks/bannerSliderMock'
+import highlightMock from 'mocks/highlightMock'
+import gamesMock from 'mocks/gameCardSliderMock'
 
 import { Home } from 'templates'
 

@@ -1,7 +1,7 @@
 import Home, { HomeTemplateProps } from 'templates/Home'
-import bannerMock from 'components/BannerSlider/mock'
-import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mocks'
+import bannerMock from 'mocks/bannerSliderMock'
+import highlightMock from 'mocks/highlightMock'
+import gamesMock from 'mocks/gameCardSliderMock'
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />
