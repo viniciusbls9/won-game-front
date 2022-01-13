@@ -44,4 +44,10 @@ describe('<GameDetails />', () => {
 
     expect(screen.getByRole('img', { name: /Mac/i })).toBeInTheDocument()
   })
+
+  it('should render the formated date', () => {
+    renderWithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByText('Nov 21, 2020')).toBeInTheDocument()
+  })
 })
