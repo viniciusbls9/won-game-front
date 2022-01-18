@@ -4,16 +4,20 @@ import * as S from './styles'
 
 type Plataform = 'windows' | 'linux' | 'mac'
 
+type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
+
 export type GameDetailsProps = {
   developer: string
   plataforms: Plataform[]
   releaseDate: string
+  rating: Rating
 }
 
 const GameDetails = ({
   plataforms,
   developer,
-  releaseDate
+  releaseDate,
+  rating
 }: GameDetailsProps) => {
   const plataformIcons = {
     linux: <Linux title="Linux" size={18} />,
@@ -61,7 +65,9 @@ const GameDetails = ({
 
         <S.Block>
           <S.Label>Rating</S.Label>
-          <S.Description>18+</S.Description>
+          <S.Description>
+            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '0')}+`}
+          </S.Description>
         </S.Block>
 
         <S.Block>
