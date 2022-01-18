@@ -54,7 +54,7 @@ const GameDetails = ({
         <S.Block>
           <S.Label>Plataforms</S.Label>
           <S.IconsWrapper>
-            {plataforms.map((icon: Plataform) => (
+            {plataforms?.map((icon: Plataform) => (
               <S.Icon key={icon}>{plataformIcons[icon]}</S.Icon>
             ))}
           </S.IconsWrapper>
@@ -68,7 +68,7 @@ const GameDetails = ({
         <S.Block>
           <S.Label>Rating</S.Label>
           <S.Description>
-            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '0')}+`}
+            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '')}+`}
           </S.Description>
         </S.Block>
 
