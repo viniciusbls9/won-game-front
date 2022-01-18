@@ -9,7 +9,8 @@ const props: GameDetailsProps = {
   developer: 'Different Tales',
   plataforms: ['windows', 'mac', 'linux'],
   releaseDate: '2020-11-21T23:00:00',
-  rating: 'BR0'
+  rating: 'BR0',
+  genres: ['Role-playing', 'Narrative']
 }
 
 describe('<GameDetails />', () => {
@@ -62,5 +63,11 @@ describe('<GameDetails />', () => {
     renderWithTheme(<GameDetails {...props} />)
 
     expect(screen.getByText('Nov 21, 2020')).toBeInTheDocument()
+  })
+
+  it('should render a list of genres', () => {
+    renderWithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByText('Role-playing / Narrative')).toBeInTheDocument()
   })
 })
