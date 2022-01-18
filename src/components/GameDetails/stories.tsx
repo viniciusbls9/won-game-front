@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import { GameDetails } from 'components'
 import { GameDetailsProps } from '.'
+import GameDetailsMock from 'mocks/gameDetailsMock'
 
 export default {
   title: 'Game/GameDetails',
@@ -10,14 +11,21 @@ export default {
       default: 'won-dark'
     }
   },
-  args: {
-    plataforms: ['windows', 'linux', 'mac']
-  },
+  args: GameDetailsMock,
   argTypes: {
+    releaseDate: {
+      control: 'date'
+    },
     plataforms: {
       control: {
         type: 'inline-check',
         options: ['windows', 'linux', 'mac']
+      }
+    },
+    genres: {
+      control: {
+        type: 'inline-check',
+        options: ['Role-playing', 'Narrative']
       }
     }
   }
