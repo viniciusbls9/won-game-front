@@ -55,7 +55,7 @@ const Gallery = ({ items }: GalleryProps) => {
   return (
     <S.Wrapper>
       <Slider settings={settings}>
-        {items.map((item) => {
+        {items?.map((item) => {
           return (
             <img
               role="button"
