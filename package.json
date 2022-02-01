@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "git-commit-msg-linter": "^3.2.6",
+    "jest": "^27.4.7",
     "next": "11.0.0",
     "next-pwa": "^5.2.21",
     "plop": "^2.7.4",
@@ -59,7 +60,6 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.2",
-    "jest": "^27.0.6",
     "jest-styled-components": "^7.0.4",
     "lint-staged": "^11.2.3",
     "prettier": "2.3.1",
