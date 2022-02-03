@@ -1,10 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos'
 import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos'
 import { Close } from '@styled-icons/material-outlined/Close'
+import SlickSlider from 'react-slick'
 
 import Slider, { SliderSettings } from 'components/Slider'
 import * as S from './styles'
+
+const commonSettings: SliderSettings = {
+  arrows: true,
+  infinite: false,
+  lazyLoad: 'ondemand',
+  nextArrow: <ArrowRight aria-label="next image" />,
+  prevArrow: <ArrowLeft aria-label="previous image" />
+}
 
 export type GalleryImageProps = {
   src: string
@@ -16,10 +25,8 @@ export type GalleryProps = {
 }
 
 const settings: SliderSettings = {
-  arrows: true,
+  ...commonSettings,
   slidesToShow: 4,
-  infinite: false,
-  lazyLoad: 'ondemand',
   responsive: [
     {
       breakpoint: 1375,
@@ -45,12 +52,13 @@ const settings: SliderSettings = {
         draggable: true
       }
     }
-  ],
-  nextArrow: <ArrowRight aria-label="next image" />,
-  prevArrow: <ArrowLeft aria-label="previous image" />
+  ]
 }
 
+const modalSettings: SliderSettings = { ...commonSettings, slidesToShow: 1 }
+
 const Gallery = ({ items }: GalleryProps) => {
+  const slider = useRef<SlickSlider>(null)
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -63,8 +71,8 @@ const Gallery = ({ items }: GalleryProps) => {
 
   return (
     <S.Wrapper>
-      <Slider settings={settings}>
-        {items?.map((item) => {
+      <Slider ref={slider} settings={settings}>
+        {items?.map((item, index) => {
           return (
             <img
               role="button"
@@ -73,6 +81,7 @@ const Gallery = ({ items }: GalleryProps) => {
               alt={`Thumb - ${item.label}`}
               onClick={() => {
                 setIsOpen(true)
+                slider.current!.slickGoTo(index, true)
               }}
             />
           )
@@ -87,6 +96,16 @@ const Gallery = ({ items }: GalleryProps) => {
         >
           <Close size={40} />
         </S.Close>
+
+        <S.Content>
+          <Slider ref={slider} settings={modalSettings}>
+            {items?.map((item, index) => {
+              return (
+                <img key={`Gallery-${index}`} src={item.src} alt={item.label} />
+              )
+            })}
+          </Slider>
+        </S.Content>
       </S.Modal>
     </S.Wrapper>
   )
