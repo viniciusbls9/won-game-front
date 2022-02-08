@@ -71,14 +71,14 @@ exports[`<Game /> should render the heading 1`] = `
   padding-right: calc(3.2rem / 2);
 }
 
-.c26 {
+.c27 {
   color: #030517;
   position: relative;
   margin-bottom: 3.2rem;
   font-size: 1.6rem;
 }
 
-.c26::after {
+.c27::after {
   position: absolute;
   left: 0;
   bottom: -1rem;
@@ -87,23 +87,23 @@ exports[`<Game /> should render the heading 1`] = `
   border-bottom: 0.5rem solid #3CD3C1;
 }
 
-.c26::after {
+.c27::after {
   width: 3rem;
 }
 
-.c21 .c25 {
+.c22 .c26 {
   text-transform: uppercase;
 }
 
-.c23 {
+.c24 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 3.2rem;
   margin-top: 3.2rem;
 }
 
-.c24 a,
-.c24 span {
+.c25 a,
+.c25 span {
   display: block;
   color: #8F8F8F;
   -webkit-text-decoration: none;
@@ -112,12 +112,12 @@ exports[`<Game /> should render the heading 1`] = `
   font-size: 1.4rem;
 }
 
-.c24 a:hover {
+.c25 a:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c27 {
+.c28 {
   color: #8F8F8F;
   font-size: 1.2rem;
   margin-top: 4.0rem;
@@ -137,7 +137,7 @@ exports[`<Game /> should render the heading 1`] = `
   height: 3.3rem;
 }
 
-.c22 {
+.c23 {
   color: #030517;
   width: 11rem;
   height: 3.3rem;
@@ -338,6 +338,12 @@ exports[`<Game /> should render the heading 1`] = `
 }
 
 .c20 {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c21 {
   margin-top: 4.0rem;
   padding-bottom: 1.6rem;
   padding-top: 5.6rem;
@@ -347,7 +353,7 @@ exports[`<Game /> should render the heading 1`] = `
 }
 
 @media (min-width:768px) {
-  .c23 {
+  .c24 {
     grid-template-columns: repeat(4,1fr);
   }
 }
@@ -397,7 +403,7 @@ exports[`<Game /> should render the heading 1`] = `
 }
 
 @media (min-width:768px) {
-  .c20 {
+  .c21 {
     padding-top: calc(5.6rem * 2);
     -webkit-clip-path: polygon(0 15%,100% 0%,100% 100%,0 100%);
     clip-path: polygon(0 15%,100% 0%,100% 100%,0 100%);
@@ -668,20 +674,24 @@ exports[`<Game /> should render the heading 1`] = `
       </nav>
     </menu>
   </div>
-  <h1>
-    Game
-  </h1>
-  <section
+  <div
     class="c20"
+  >
+    <h1>
+      Game
+    </h1>
+  </div>
+  <section
+    class="c21"
   >
     <div
       class="c1"
     >
       <footer
-        class="c21"
+        class="c22"
       >
         <div
-          class="c22"
+          class="c23"
           color="black"
         >
           <svg
@@ -767,13 +777,13 @@ exports[`<Game /> should render the heading 1`] = `
           </svg>
         </div>
         <div
-          class="c23"
+          class="c24"
         >
           <div
-            class="c24"
+            class="c25"
           >
             <h2
-              class="c25 c26"
+              class="c26 c27"
               color="black"
             >
               Contact
@@ -785,10 +795,10 @@ exports[`<Game /> should render the heading 1`] = `
             </a>
           </div>
           <div
-            class="c24"
+            class="c25"
           >
             <h2
-              class="c25 c26"
+              class="c26 c27"
               color="black"
             >
               Follow us
@@ -827,10 +837,10 @@ exports[`<Game /> should render the heading 1`] = `
             </nav>
           </div>
           <div
-            class="c24"
+            class="c25"
           >
             <h2
-              class="c25 c26"
+              class="c26 c27"
               color="black"
             >
               Links
@@ -857,10 +867,10 @@ exports[`<Game /> should render the heading 1`] = `
           </div>
           <div
             aria-labelledby="footer-contact"
-            class="c24"
+            class="c25"
           >
             <h2
-              class="c25 c26"
+              class="c26 c27"
               color="black"
             >
               Location
@@ -877,7 +887,7 @@ exports[`<Game /> should render the heading 1`] = `
           </div>
         </div>
         <div
-          class="c27"
+          class="c28"
         >
           Won Games 2020 © All rights reserved.
         </div>
