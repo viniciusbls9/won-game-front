@@ -1,9 +1,13 @@
 import { Base } from 'templates'
 import * as S from './styles'
 
-const Game = () => (
+export type GameTemplateProps = {
+  cover: string
+}
+
+const Game = ({ cover }: GameTemplateProps) => (
   <Base>
-    <S.Cover src="" role="image" aria-label="cover" />
+    <S.Cover src={cover} role="image" aria-label="cover" />
   </Base>
 )
 
