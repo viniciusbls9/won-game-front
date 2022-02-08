@@ -1,8 +1,9 @@
 import { Base } from 'templates'
+import * as S from './styles'
 
 const Game = () => (
   <Base>
-    <h1>Game</h1>
+    <S.Cover src="" role="image" aria-label="cover" />
   </Base>
 )
 
