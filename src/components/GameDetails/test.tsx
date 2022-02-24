@@ -7,7 +7,8 @@ import { GameDetailsProps } from '.'
 
 const props: GameDetailsProps = {
   developer: 'Different Tales',
-  plataforms: ['windows', 'mac', 'linux'],
+  platforms: ['windows', 'mac', 'linux'],
+  publisher: 'Walktrough',
   releaseDate: '2020-11-21T23:00:00',
   rating: 'BR0',
   genres: ['Role-playing', 'Narrative']
@@ -26,7 +27,7 @@ describe('<GameDetails />', () => {
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { name: /plataforms/i })
+      screen.getByRole('heading', { name: /platforms/i })
     ).toBeInTheDocument()
 
     expect(
@@ -63,6 +64,18 @@ describe('<GameDetails />', () => {
     renderWithTheme(<GameDetails {...props} />)
 
     expect(screen.getByText('Nov 21, 2020')).toBeInTheDocument()
+  })
+
+  it('should render the publisher', () => {
+    renderWithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByText(/Walktrough/i)).toBeInTheDocument()
+  })
+
+  it('should render the developer', () => {
+    renderWithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByText(/Different Tales/i)).toBeInTheDocument()
   })
 
   it('should render a list of genres', () => {
