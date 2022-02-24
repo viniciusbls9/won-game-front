@@ -2,14 +2,14 @@ import { Apple, Windows, Linux } from '@styled-icons/fa-brands'
 import { Heading, MediaMatch } from 'components'
 import * as S from './styles'
 
-type Plataform = 'windows' | 'linux' | 'mac'
+type Platform = 'windows' | 'linux' | 'mac'
 
 type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
 
 export type GameDetailsProps = {
   developer: string
   publisher: string
-  platforms: Plataform[]
+  platforms: Platform[]
   releaseDate: string
   rating: Rating
   genres: string[]
@@ -23,7 +23,7 @@ const GameDetails = ({
   rating,
   genres
 }: GameDetailsProps) => {
-  const plataformIcons = {
+  const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
     mac: <Apple title="Mac" size={18} />,
     windows: <Windows title="Windows" size={18} />
@@ -56,8 +56,8 @@ const GameDetails = ({
         <S.Block>
           <S.Label>Platforms</S.Label>
           <S.IconsWrapper>
-            {platforms?.map((icon: Plataform) => (
-              <S.Icon key={icon}>{plataformIcons[icon]}</S.Icon>
+            {platforms?.map((icon: Platform) => (
+              <S.Icon key={icon}>{platformIcons[icon]}</S.Icon>
             ))}
           </S.IconsWrapper>
         </S.Block>
