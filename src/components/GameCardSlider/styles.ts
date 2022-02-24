@@ -15,7 +15,7 @@ export const Wrapper = styled.section<WrapperProps>`
       display: flex;
     }
     .slick-slide > div {
-      margin: 0 ${theme.spacings.xxsmall} 0 0;
+      margin: 0 ${theme.spacings.xxsmall};
       flex: 1 0 auto;
       height: 100%;
     }
@@ -24,7 +24,7 @@ export const Wrapper = styled.section<WrapperProps>`
     }
     ${media.greaterThan('large')`
       .slick-slide > div {
-        margin: 0 ${theme.spacings.xsmall} 0 0;
+        margin: 0 ${theme.spacings.xsmall};
       }
       .slick-list {
         margin: 0 -${theme.spacings.xsmall};
