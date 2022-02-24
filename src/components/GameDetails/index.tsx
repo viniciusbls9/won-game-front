@@ -8,14 +8,16 @@ type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
 
 export type GameDetailsProps = {
   developer: string
-  plataforms: Plataform[]
+  publisher: string
+  platforms: Plataform[]
   releaseDate: string
   rating: Rating
   genres: string[]
 }
 
 const GameDetails = ({
-  plataforms,
+  platforms,
+  publisher,
   developer,
   releaseDate,
   rating,
@@ -52,9 +54,9 @@ const GameDetails = ({
         </S.Block>
 
         <S.Block>
-          <S.Label>Plataforms</S.Label>
+          <S.Label>Platforms</S.Label>
           <S.IconsWrapper>
-            {plataforms?.map((icon: Plataform) => (
+            {platforms?.map((icon: Plataform) => (
               <S.Icon key={icon}>{plataformIcons[icon]}</S.Icon>
             ))}
           </S.IconsWrapper>
@@ -62,7 +64,7 @@ const GameDetails = ({
 
         <S.Block>
           <S.Label>Publisher</S.Label>
-          <S.Description>2K</S.Description>
+          <S.Description>{publisher}</S.Description>
         </S.Block>
 
         <S.Block>
