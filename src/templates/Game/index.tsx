@@ -1,4 +1,4 @@
-import { Showcase, TextContent } from 'components'
+import { Divider, Showcase, TextContent } from 'components'
 import { HighlightProps } from 'components/Highlight'
 import { GameCardProps } from 'components/GameCard'
 import Gallery, { GalleryImageProps } from 'components/Gallery'
@@ -46,6 +46,7 @@ const Game = ({
 
       <S.SectionGameDetails>
         <GameDetails {...details} />
+        <Divider />
       </S.SectionGameDetails>
 
       <Showcase

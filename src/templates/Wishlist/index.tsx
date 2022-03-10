@@ -1,4 +1,11 @@
-import { Container, Heading, Showcase, GameCard, Grid } from 'components'
+import {
+  Container,
+  Heading,
+  Showcase,
+  GameCard,
+  Grid,
+  Divider
+} from 'components'
 import { GameCardProps } from 'components/GameCard'
 import { HighlightProps } from 'components/Highlight'
 import { Base } from 'templates'
@@ -25,7 +32,10 @@ const Wishlist = ({
           <GameCard key={`wishlist-${index}`} {...game} />
         ))}
       </Grid>
+
+      <Divider />
     </Container>
+
     <Showcase
       title="You may like these games"
       games={recommendedGames}
