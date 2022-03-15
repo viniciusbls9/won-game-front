@@ -9,7 +9,7 @@
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "test": "jest --maxWorkers=50%",
-    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:watch": "yarn jest --watch",
     "storybook": "start-storybook -s ./public -p 6006",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "build-storybook": "build-storybook -s ./public",
@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "git-commit-msg-linter": "^3.2.6",
-    "jest": "^27.4.7",
     "next": "11.0.0",
     "next-pwa": "^5.2.21",
     "plop": "^2.7.4",
