@@ -28,4 +28,14 @@ describe('<PaymentOptions />', () => {
       expect(screen.getByRole('radio', { name: /4325/ })).toBeChecked()
     })
   })
+
+  it('should not call handlePayment function when button is disabled', () => {
+    const handlePayment = jest.fn()
+    renderWithTheme(
+      <PaymentOptions cards={paymentMock} handlePayment={handlePayment} />
+    )
+
+    userEvent.click(screen.getByRole('button', { name: /buy now/i }))
+    expect(handlePayment).not.toHaveBeenCalled()
+  })
 })
