@@ -38,4 +38,18 @@ describe('<PaymentOptions />', () => {
     userEvent.click(screen.getByRole('button', { name: /buy now/i }))
     expect(handlePayment).not.toHaveBeenCalled()
   })
+
+  it('should call handlePayment function when credit card is select', async () => {
+    const handlePayment = jest.fn()
+    renderWithTheme(
+      <PaymentOptions cards={paymentMock} handlePayment={handlePayment} />
+    )
+
+    userEvent.click(screen.getByLabelText(/4325/))
+    userEvent.click(screen.getByRole('button', { name: /buy now/i }))
+
+    await waitFor(() => {
+      expect(handlePayment).toHaveBeenCalled()
+    })
+  })
 })
