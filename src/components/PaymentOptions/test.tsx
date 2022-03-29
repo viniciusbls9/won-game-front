@@ -1,10 +1,11 @@
 import '../../../.jest/match-media-mock'
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 
 import { PaymentOptions } from 'components'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import paymentMock from 'mocks/PaymentOptionsMock'
+import userEvent from '@testing-library/user-event'
 
 describe('<PaymentOptions />', () => {
   it('should render the saved card options and the add new card button', () => {
@@ -15,5 +16,16 @@ describe('<PaymentOptions />', () => {
     expect(screen.getByLabelText(/4325/)).toBeInTheDocument()
     expect(screen.getByLabelText(/4326/)).toBeInTheDocument()
     expect(screen.getByText(/add a new credit card/i)).toBeInTheDocument()
+  })
+
+  it('should handle select card when clicking on the label', async () => {
+    renderWithTheme(
+      <PaymentOptions cards={paymentMock} handlePayment={jest.fn} />
+    )
+
+    userEvent.click(screen.getByLabelText(/4325/))
+    await waitFor(() => {
+      expect(screen.getByRole('radio', { name: /4325/ })).toBeChecked()
+    })
   })
 })
