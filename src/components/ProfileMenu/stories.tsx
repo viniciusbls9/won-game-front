@@ -5,7 +5,7 @@ export default {
   title: 'ProfileMenu',
   component: ProfileMenu,
   parameters: {
-    background: {
+    backgrounds: {
       default: 'won-dark'
     }
   }
