@@ -1,4 +1,4 @@
-import '../../../.jest/match-media-mock'
+import 'match-media-mock'
 import { fireEvent, screen } from '@testing-library/react'
 
 import { Gallery } from 'components'

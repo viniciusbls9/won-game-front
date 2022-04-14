@@ -1,5 +1,5 @@
 import { renderWithTheme } from 'utils/tests/helpers'
-import '../../../.jest/match-media-mock'
+import 'match-media-mock'
 import { screen } from '@testing-library/react'
 
 import { Auth } from 'templates'

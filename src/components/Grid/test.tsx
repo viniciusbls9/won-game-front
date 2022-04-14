@@ -1,4 +1,4 @@
-import '../../../.jest/match-media-mock'
+import 'match-media-mock'
 import { Grid } from 'components'
 import { renderWithTheme } from 'utils/tests/helpers'
 

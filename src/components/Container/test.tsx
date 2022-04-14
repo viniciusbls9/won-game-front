@@ -1,4 +1,4 @@
-import '../../../.jest/match-media-mock'
+import 'match-media-mock'
 import theme from 'styles/theme'
 import { renderWithTheme } from 'utils/tests/helpers'
 

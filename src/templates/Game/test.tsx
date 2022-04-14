@@ -1,4 +1,4 @@
-import '../../../.jest/match-media-mock'
+import 'match-media-mock'
 import { screen } from '@testing-library/react'
 
 import { Game } from 'templates'
