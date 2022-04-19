@@ -23,6 +23,13 @@ const FormProfile = () => (
         label="E-mail"
         disabled
       />
+
+      <TextField
+        name="password"
+        type="password"
+        placeholder="Type your password"
+        label="Password"
+      />
     </S.Form>
   </S.Wrapper>
 )
