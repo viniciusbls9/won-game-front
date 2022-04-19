@@ -1,4 +1,4 @@
-import { Heading, TextField } from 'components'
+import { Heading, TextField, Button } from 'components'
 import * as S from './styles'
 
 const FormProfile = () => (
@@ -37,6 +37,8 @@ const FormProfile = () => (
         placeholder="New password"
         label="New password"
       />
+
+      <Button size="large">Save</Button>
     </S.Form>
   </S.Wrapper>
 )
