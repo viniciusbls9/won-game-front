@@ -13,5 +13,6 @@ describe('<FormProfile />', () => {
     ).toBeInTheDocument()
 
     expect(screen.getByRole('textbox', { name: /name/i })).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /e-mail/i })).toBeInTheDocument()
   })
 })
