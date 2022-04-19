@@ -1,4 +1,4 @@
-import { Heading } from 'components'
+import { Heading, TextField } from 'components'
 import * as S from './styles'
 
 const FormProfile = () => (
@@ -6,6 +6,15 @@ const FormProfile = () => (
     <Heading lineBottom color="black" size="small">
       My profile
     </Heading>
+
+    <S.Form>
+      <TextField
+        name="name"
+        placeholder="Name"
+        label="Name"
+        initialValue="John Doe"
+      />
+    </S.Form>
   </S.Wrapper>
 )
 
