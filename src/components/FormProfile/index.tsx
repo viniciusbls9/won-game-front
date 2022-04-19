@@ -14,6 +14,15 @@ const FormProfile = () => (
         label="Name"
         initialValue="John Doe"
       />
+
+      <TextField
+        name="email"
+        type="email"
+        placeholder="Email"
+        initialValue="johndoe@gmail.com"
+        label="E-mail"
+        disabled
+      />
     </S.Form>
   </S.Wrapper>
 )
