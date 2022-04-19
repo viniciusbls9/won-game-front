@@ -18,5 +18,6 @@ describe('<FormProfile />', () => {
     expect(
       screen.getByPlaceholderText(/type your password/i)
     ).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(/new password/i)).toBeInTheDocument()
   })
 })
