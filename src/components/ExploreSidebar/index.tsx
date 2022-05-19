@@ -1,4 +1,4 @@
-import { Heading, Checkbox } from 'components'
+import { Heading, Checkbox, Radio } from 'components'
 import * as S from './styles'
 
 const ExploreSidebar = () => (
@@ -18,13 +18,38 @@ const ExploreSidebar = () => (
       Sort by
     </Heading>
 
+    <Radio
+      id="high-to-low"
+      name="sort-by"
+      label="High to low"
+      labelFor="high-to-low"
+      value="high-to-low"
+    />
+
+    <Radio
+      id="low-to-high"
+      name="sort-by"
+      label="Low to high"
+      labelFor="low-to-high"
+      value="low-to-high"
+    />
+
     <Heading lineBottom lineColor="secondary" size="small">
       System
     </Heading>
 
+    <Checkbox name="windows" label="Windows" labelFor="windows" />
+    <Checkbox name="mac" label="Mac" labelFor="mac" />
+    <Checkbox name="linux" label="Linux" labelFor="linux" />
+
     <Heading lineBottom lineColor="secondary" size="small">
       Genre
     </Heading>
+
+    <Checkbox name="action" label="Action" labelFor="action" />
+    <Checkbox name="adventure" label="Adventure" labelFor="adventure" />
+    <Checkbox name="fps" label="FPS" labelFor="fps" />
+    <Checkbox name="mmorpg" label="MMORPG" labelFor="mmorpg" />
   </S.Wrapper>
 )
 
