@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Heading, Checkbox, Radio, Button } from 'components'
 import * as S from './styles'
 
@@ -13,11 +14,18 @@ type Field = {
   name: string
 }
 
-export type ExploreSidebarProps = {
-  items: ItemProps[]
+type Values = {
+  [field: string]: boolean | string
 }
 
-const ExploreSidebar = ({ items }: ExploreSidebarProps) => {
+export type ExploreSidebarProps = {
+  items: ItemProps[]
+  initialValues?: Values
+}
+
+const ExploreSidebar = ({ items, initialValues = {} }: ExploreSidebarProps) => {
+  const [values] = useState(initialValues)
+
   return (
     <S.Wrapper>
       {items.map((item) => (
@@ -38,6 +46,7 @@ const ExploreSidebar = ({ items }: ExploreSidebarProps) => {
                 name={field.name}
                 label={field.label}
                 labelFor={field.name}
+                isChecked={!!values[field.name]}
               />
             ))}
 
@@ -50,6 +59,7 @@ const ExploreSidebar = ({ items }: ExploreSidebarProps) => {
                 name={item.name}
                 label={field.label}
                 labelFor={field.name}
+                defaultChecked={field.name === values[item.name]}
               />
             ))}
         </>
