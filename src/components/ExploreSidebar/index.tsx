@@ -29,7 +29,11 @@ const ExploreSidebar = ({
   initialValues = {},
   onFilter
 }: ExploreSidebarProps) => {
-  const [values] = useState(initialValues)
+  const [values, setValues] = useState(initialValues)
+
+  const handleChange = (name: string, value: string | boolean) => {
+    setValues((oldValue) => ({ ...oldValue, [name]: value }))
+  }
 
   const handleFilter = () => {
     onFilter(values)
@@ -56,6 +60,7 @@ const ExploreSidebar = ({
                 label={field.label}
                 labelFor={field.name}
                 isChecked={!!values[field.name]}
+                onCheck={(value) => handleChange(field.name, value)}
               />
             ))}
 
@@ -69,6 +74,7 @@ const ExploreSidebar = ({
                 label={field.label}
                 labelFor={field.name}
                 defaultChecked={field.name === values[item.name]}
+                onChange={() => handleChange(item.name, field.name)}
               />
             ))}
         </>
