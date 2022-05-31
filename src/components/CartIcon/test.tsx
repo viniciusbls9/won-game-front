@@ -18,4 +18,11 @@ describe('<CartIcon />', () => {
     expect(screen.getByLabelText(/cart items/i)).toBeInTheDocument()
     expect(screen.getByText(/3/i)).toBeInTheDocument()
   })
+
+  it('should render with badge only if has positive number', () => {
+    renderWithTheme(<CartIcon quantity={-1} />)
+
+    expect(screen.queryByLabelText(/cart items/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/-1/i)).not.toBeInTheDocument()
+  })
 })
