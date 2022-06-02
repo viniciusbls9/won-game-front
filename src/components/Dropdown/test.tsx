@@ -3,6 +3,7 @@ import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import { Dropdown } from 'components'
+import userEvent from '@testing-library/user-event'
 
 describe('<Dropdown />', () => {
   beforeEach(() => {
@@ -17,5 +18,17 @@ describe('<Dropdown />', () => {
 
   it('should render title', () => {
     expect(screen.getByLabelText(/toogle dropdown/)).toBeInTheDocument()
+  })
+
+  it('should handle open/close dropdown', () => {
+    const content = screen.getByText(/content/i).parentElement!
+
+    expect(content).toHaveStyle({ opacity: 0 })
+    expect(content.getAttribute('aria-hidden')).toBe('true')
+
+    userEvent.click(screen.getByLabelText(/toogle dropdown/))
+
+    expect(content).toHaveStyle({ opacity: 1 })
+    expect(content.getAttribute('aria-hidden')).toBe('false')
   })
 })
