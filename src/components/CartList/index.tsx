@@ -11,7 +11,7 @@ export type CartListProps = {
 }
 
 const CartList = ({ items = [], total, hasButton = false }: CartListProps) => (
-  <S.Wrapper>
+  <S.Wrapper isEmpty={!items.length}>
     {items.length ? (
       <>
         {items.map((item) => (
@@ -33,6 +33,7 @@ const CartList = ({ items = [], total, hasButton = false }: CartListProps) => (
       <Empty
         title="Your cart is empty"
         description="Go back to the store and explore great games and offers"
+        hasLink
       />
     )}
   </S.Wrapper>
