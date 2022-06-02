@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components'
 
+type WrapperProps = {
+  isOpen?: boolean
+}
+
 export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, isOpen }) => css`
     position: relative;
@@ -43,10 +47,6 @@ export const Content = styled.div`
     }
   `}
 `
-
-type WrapperProps = {
-  isOpen?: boolean
-}
 
 const wrapperModifiers = {
   open: () => css`
