@@ -11,7 +11,6 @@ describe('<Menu />', () => {
     expect(screen.getByRole('img', { name: /won games/i })).toBeInTheDocument()
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/open shopping cart/i)).toBeInTheDocument()
   })
 
   it('should handle the open/close mobile menu', () => {
@@ -42,11 +41,10 @@ describe('<Menu />', () => {
     expect(screen.getByText('Sign Up')).toBeInTheDocument()
   })
 
-  it('should show whishlist nd account when logged in', () => {
+  it('should show whishlist and account when logged in', () => {
     renderWithTheme(<Menu username="Vinicius" />)
 
-    expect(screen.getByText(/my account/i)).toBeInTheDocument()
-    expect(screen.getByText(/wishlist/i)).toBeInTheDocument()
+    expect(screen.getByText(/vinicius/i)).toBeInTheDocument()
 
     expect(screen.queryByText('Sign in')).not.toBeInTheDocument()
     expect(screen.queryByText('Sign Up')).not.toBeInTheDocument()
