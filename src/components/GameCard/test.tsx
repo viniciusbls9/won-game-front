@@ -7,6 +7,7 @@ import theme from 'styles/theme'
 
 const props = {
   title: 'Population Zero',
+  slug: 'populazion-zero',
   developer: 'Rockstar Games',
   img: 'https://i.picsum.photos/id/1010/1600/400.jpg?hmac=aHo3G1_n46RGzMM7jzyqMKUbSCfPPkHlm52FEvbShaw',
   price: 'R$ 235,00'
@@ -25,6 +26,12 @@ describe('<GameCard />', () => {
       'src',
       props.img
     )
+
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/game/${props.slug}`
+    )
+
     // verifiquem se o price foi renderizado
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
 
